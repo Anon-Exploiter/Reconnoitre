@@ -94,8 +94,8 @@ Which would also write the following recommendations file in the scans folder fo
       [=] nikto -h 192.168.1.50 -p 80 > /root/Documents/labs/192.168.1.50/scans/192.168.1.50_nikto.txt
       [=] dirb http://192.168.1.50:80/ -o /root/Documents/labs/192.168.1.50/scans/192.168.1.50_dirb.txt -r -S -x ./dirb-extensions/php.ext
       [=] java -jar /usr/share/dirbuster/DirBuster-1.0-RC1.jar -H -l /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -r /root/Documents/labs/192.168.1.50/scans/192.168.1.50_dirbuster.txt -u http://192.168.1.50:80/
-      [=] gobuster -w /usr/share/seclists/Discovery/Web_Content/common.txt -u http://192.168.1.50:80/ -s '200,204,301,302,307,403,500' -e > /root/Documents/labs/192.168.1.50/scans/192.168.1.50_gobuster_common.txt -t 50 
-      [=] gobuster -w /usr/share/seclists/Discovery/Web_Content/cgis.txt -u http://192.168.1.50:80/ -s '200,204,301,307,403,500' -e > /root/Documents/labs/192.168.1.50/scans/192.168.1.50_gobuster_cgis.txt -t 50 
+      [=] gobuster dir -w /usr/share/seclists/Discovery/Web_Content/common.txt -u http://192.168.1.50:80/ -s '200,204,301,302,307,403,500' -e > /root/Documents/labs/192.168.1.50/scans/192.168.1.50_gobuster_common.txt -t 50 
+      [=] gobuster dir -w /usr/share/seclists/Discovery/Web_Content/cgis.txt -u http://192.168.1.50:80/ -s '200,204,301,307,403,500' -e > /root/Documents/labs/192.168.1.50/scans/192.168.1.50_gobuster_cgis.txt -t 50 
    [>] Use curl to retreive web headers and find host information, e.g
       [=] curl -i 192.168.1.50
       [=] curl -i 192.168.1.50/robots.txt -s | html2text
